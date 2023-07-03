@@ -1,14 +1,14 @@
 import { useState } from "react";
 import NavBar from "./Components/NavBar";
-import Search from "./Components/Search";
+import Home from "./Components/Home";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-    <div className='font-serif display-grid sm:display-flex flex-col '>
+    <div className='font-serif grid sm:flex flex-col '>
      <NavBar/>
-     <Search/>
+     <Home/>
      </div>
     </>
   );
