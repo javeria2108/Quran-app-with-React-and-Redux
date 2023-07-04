@@ -19,18 +19,19 @@ export const Verses = () => {
   return (
     <>
     <div 
-    className="bg-yellow-l " >
+    className="bg-navy-bg " >
         <div className="flex flex-row
          justify-between mx-3 my-3">
          <button
-     className="bg-navy-bg 
+     className="bg-green-bg
      text-white
       px-6 py-2 my-5 mx-5
       rounded-full
      hover:bg-dark-maroon 
        transition-all duration-500 ease-in-out">
         Show Translation</button>
-        <button  className="bg-navy-bg 
+        <button  className="bg-green-bg
+
      text-white
       px-6 py-2 my-5 mx-5
       rounded-full
@@ -44,11 +45,11 @@ export const Verses = () => {
     <div className="flex flex-col items-center justify-center min-h-screen py-5">
    
 
-    <div className="overflow-hidden shadow-lg rounded-lg max-w-lg w-full m-auto p-4 bg-dark-maroon">
+    <div className="overflow-hidden shadow-lg rounded-lg max-w-lg w-full m-auto p-4 bg-yellow-l">
       <div className="space-y-2">
         {verses.map((verse) => (
-          <div key={verse.id} className="border-t border-b py-2">
-            <p className="text-xl text-center text-white " dir="rtl">{verse.text_indopak}</p>
+          <div key={verse.id} className=" border-b border-dark-maroon py-2">
+            <p className="text-xl text-center text-navy-bg " dir="rtl">{verse.text_indopak}</p>
           </div>
         ))}
       </div>
