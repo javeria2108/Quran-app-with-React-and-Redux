@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { fetchChapterVerses } from "../redux/thunk/fetchChapterVerse";
+import { clearVerses } from "../redux/actions";
 import { useParams } from 'react-router-dom';
 
 export const Verses = () => {
@@ -10,10 +11,39 @@ export const Verses = () => {
   const dispatchVerses = useDispatch();
   useEffect(() => {
     dispatchVerses(fetchChapterVerses(id));
+    return () => {
+        dispatchVerses(clearVerses());
+      }
   }, [dispatchVerses, id]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-l py-5">
+    <>
+    <div 
+    className="bg-yellow-l " >
+        <div className="flex flex-row
+         justify-between mx-3 my-3">
+         <button
+     className="bg-navy-bg 
+     text-white
+      px-6 py-2 my-5 mx-5
+      rounded-full
+     hover:bg-dark-maroon 
+       transition-all duration-500 ease-in-out">
+        Show Translation</button>
+        <button  className="bg-navy-bg 
+     text-white
+      px-6 py-2 my-5 mx-5
+      rounded-full
+     hover:bg-dark-maroon 
+       transition-all duration-500 ease-in-out"
+       >
+            Show Tafseer
+
+        </button>
+        </div>
+    <div className="flex flex-col items-center justify-center min-h-screen py-5">
+   
+
     <div className="overflow-hidden shadow-lg rounded-lg max-w-lg w-full m-auto p-4 bg-dark-maroon">
       <div className="space-y-2">
         {verses.map((verse) => (
@@ -24,5 +54,7 @@ export const Verses = () => {
       </div>
     </div>
   </div>
+  </div>
+  </>
   );
 };

@@ -10,6 +10,7 @@ export default {
         'dark-maroon': '#984A47',
         'yellow-l':'#E9C87B',
         'green-bg':'#233239',
+        'navy-bg':'#161220'
       },
     },
     container:{

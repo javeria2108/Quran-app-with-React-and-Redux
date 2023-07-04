@@ -4,7 +4,6 @@ import Home from "./Components/Home";
 import { Verses } from "./Components/Verses";
 import {Routes, Route } from 'react-router-dom';
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>

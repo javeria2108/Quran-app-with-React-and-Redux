@@ -1,4 +1,4 @@
-import { FETCH_VERSE_BY_CHAPTER,FETCH_VERSE_SUCCESS,FETCH_VERSE_FAILURE } from "../actions";
+import { CLEAR_VERSES, FETCH_VERSE_BY_CHAPTER,FETCH_VERSE_SUCCESS,FETCH_VERSE_FAILURE } from "../actions";
 const verses = {
     loading: false,
     data: [],
@@ -26,6 +26,13 @@ const verses = {
           data: [],
           error: action.payload
         };
+        case CLEAR_VERSES:
+          return {
+            ...state,
+            data: [],
+            loading: false,
+            error: ''
+          };
       default:
         return state;
     }

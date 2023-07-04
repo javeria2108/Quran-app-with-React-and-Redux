@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { fetchChapters } from '../redux/thunk';
+import { useNavigate } from 'react-router-dom';
 const Search = () => {
   
   const chapters = useSelector((state) => state.chapters.data);
@@ -21,6 +22,10 @@ console.log(chapters);
       var lowerCase = e.target.value.toLowerCase();
       setInputText(lowerCase);
     };
+    const navigate = useNavigate();
+    const handleClick=(id)=>{
+      navigate(`/verses/${id}`);
+    }
   return (
     <div className='flex flex-col items-center max-w-md mx-auto '>
       <input
@@ -35,7 +40,11 @@ console.log(chapters);
           {inputText && filteredData.map((chapter)=>{
             return(
               
-                <div className='flex flex-row justify-between px-4'  key={chapter.id}>
+                <div
+                 className='flex flex-row justify-between
+                  px-4 hover:cursor-pointer' 
+                  onClick={()=>{handleClick(chapter.id)}}
+                   key={chapter.id}>
         
                   <p>{chapter.name_simple}</p>
                   <p>{chapter.name_arabic}</p>
