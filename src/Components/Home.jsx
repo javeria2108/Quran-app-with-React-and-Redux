@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchChapters } from "../redux/thunk";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
-
+import bgpng from '../images/bg.png'
 const Home = () => {
   const chapters = useSelector((state) => state.chapters.data);
   const dispatch = useDispatch();
@@ -20,6 +20,14 @@ const handleChapterClick=(id)=>{
   }
   return (
     <div className="">
+      <div>
+      <img
+    className="w-full"
+    style={{height: '50vh'}}
+    src={bgpng} 
+    alt="Image Description"
+/>
+      </div>
       <Search />
       <div className="flex flex-wrap justify-center">
         {chapters.map((chapter) => {
