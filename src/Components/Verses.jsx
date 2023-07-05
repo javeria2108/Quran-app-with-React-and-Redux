@@ -1,13 +1,23 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchChapterVerses } from "../redux/thunk/fetchChapterVerse";
 import { clearVerses } from "../redux/actions";
 import { useParams } from 'react-router-dom';
+import { fetchTranslation } from "../redux/thunk/fetchTranslation";
+import { fetchTafseer } from "../redux/thunk/fetchTafseer";
 import png from '../images/verse.png'
 export const Verses = () => {
     const { id } = useParams();
   const verses = useSelector((state) => state.verses.data);
-  console.log(verses)
+  const Translation=useSelector((state)=>state.translation.data);
+  const Tafseer=useSelector((state)=>state.tafseer.data);
+  
+  const [translate,setTranslate]=useState(false);
+  function cleanHTMLTags(input) {
+    const doc = new DOMParser().parseFromString(input, 'text/html');
+    return doc.body.textContent || '';
+  }
+
   const dispatchVerses = useDispatch();
   useEffect(() => {
     dispatchVerses(fetchChapterVerses(id));
@@ -15,8 +25,22 @@ export const Verses = () => {
         dispatchVerses(clearVerses());
       }
   }, [dispatchVerses, id]);
-  const handleTranslationClick=()=>{
 
+  const dispatchTranslation = useDispatch();
+  useEffect(() => {
+    dispatchTranslation(fetchTranslation(id));
+   
+  }, [dispatchTranslation, id]);
+//dispatch tafseer
+/*const dispatchTafseer = useDispatch();
+  useEffect(() => {
+    dispatchTafseer(fetchTafseer(id));
+   
+  }, [dispatchTafseer, id]);
+  console.log('tafsir:'+ Tafseer)
+  */
+  const handleTranslationClick=()=>{
+    setTranslate(prevState => !prevState);
   }
 
   const handleTafseerClick=()=>{
@@ -36,7 +60,7 @@ export const Verses = () => {
      hover:bg-light-green
        transition-all duration-500 ease-in-out"
        onClick={handleTranslationClick}>
-        Show Translation</button>
+         {translate ? "Hide Translation" : "Show Translation"}</button>
         <button  className="bg-green-bg
 
      text-white
@@ -57,13 +81,29 @@ export const Verses = () => {
 
       <div className="space-y-2">
       
-        {verses.map((verse) => (
+        {verses.map((verse,index) => {
+           const translation = Translation[index];
+          
+          return(
           <div key={verse.id} className=" border-b border-navy-bg py-2">
             <p className="text-4xl leading-relaxed tracking-wide text-center text-white font-arabic " dir="rtl">{verse.text_indopak} </p>
             <span className="p-2 m-2
             text-white ">{' ' +verse.verse_key}</span>
+      {translate &&
+      <div>
+       <div className="text-white">
+          {cleanHTMLTags(translation.text)}
+        </div>
+         <p className="text-green-bg italic"> Dr.Mustafa Khattab, the Clear Quran</p>
+        </div>
+        }
+       
+      
           </div>
-        ))}
+         
+          
+        )})}
+        
       </div>
     </div>
   </div>
