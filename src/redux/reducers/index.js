@@ -3,11 +3,11 @@ import { combineReducers } from "redux";
 import chapterReducer from "./ChapterReducer";
 import chapterVerseReducer from "./ChapterVerseReducer";
 import translationReducer from "./TranslationReducer";
-import tafseerReducer from "./TafseerReducer";
+import audioReducer from "./AudioReducer";
 const rootReducer=combineReducers({
     chapters:chapterReducer,
     verses:chapterVerseReducer,
     translation:translationReducer,
-    tafseer:tafseerReducer
+    audio:audioReducer
 })
 export default rootReducer;

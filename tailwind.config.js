@@ -16,6 +16,9 @@ export default {
       },
       fontFamily:{
         'arabic':['"Al Qalam Quran"']
+      },
+      spacing: {
+        '120': '30rem',
       }
     },
     container:{
