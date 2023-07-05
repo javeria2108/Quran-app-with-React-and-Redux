@@ -7,7 +7,7 @@ import png from '../images/verse.png'
 export const Verses = () => {
     const { id } = useParams();
   const verses = useSelector((state) => state.verses.data);
-
+  console.log(verses)
   const dispatchVerses = useDispatch();
   useEffect(() => {
     dispatchVerses(fetchChapterVerses(id));
@@ -33,7 +33,7 @@ export const Verses = () => {
      text-white
       px-6 py-2 my-5 mx-5
       rounded-full
-     hover:bg-dark-maroon 
+     hover:bg-light-green
        transition-all duration-500 ease-in-out"
        onClick={handleTranslationClick}>
         Show Translation</button>
@@ -42,7 +42,7 @@ export const Verses = () => {
      text-white
       px-6 py-2 my-5 mx-5
       rounded-full
-     hover:bg-dark-maroon 
+     hover:bg-light-green
        transition-all duration-500 ease-in-out"
        onClick={handleTafseerClick}>
             Show Tafseer
@@ -53,12 +53,15 @@ export const Verses = () => {
    
     <img className="w-full max-w-md mx-auto mb-4 object-contain" src={png} alt="In the name of Allah"/>
 
-    <div className="overflow-hidden shadow-lg rounded-lg max-w-lg w-full m-auto p-4 bg-png">
+    <div className="overflow-hidden shadow-lg rounded-lg max-w-lg w-full m-auto p-4 bg-grey-bg">
+
       <div className="space-y-2">
-        
+      
         {verses.map((verse) => (
           <div key={verse.id} className=" border-b border-navy-bg py-2">
-            <p className="text-xl text-center text-red-950 " dir="rtl">{verse.text_indopak}</p>
+            <p className="text-4xl leading-relaxed tracking-wide text-center text-white font-arabic " dir="rtl">{verse.text_indopak} </p>
+            <span className="p-2 m-2
+            text-white ">{' ' +verse.verse_key}</span>
           </div>
         ))}
       </div>

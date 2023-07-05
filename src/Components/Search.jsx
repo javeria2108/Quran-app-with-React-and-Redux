@@ -29,8 +29,8 @@ console.log(chapters);
   return (
     <div className='flex flex-col items-center max-w-md mx-auto '>
       <input
-      className=' mt-20 mb-3 w-80 px-8 py-3 rounded-full lg:w-96 bg-white text-dark-maroon
-       placeholder-dark-maroon hover: ring-dark-maroon' 
+      className=' mt-20 mb-3 w-80 px-8 py-3 rounded-full lg:w-96 bg-grey-l text-dark-grey
+       placeholder-grey-bg hover: ring-dark-maroon' 
        type="text"
         placeholder='What do you want to read?'
        onChange={inputHandler}

@@ -7,12 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-maroon': '#984A47',
-        'yellow-l':'#E9C87B',
-        'green-bg':'#233239',
-        'navy-bg':'#161220',
-        'png':'#BDA047'
+        'dark-grey': '#354F52',
+        'grey-l':'#CAD2C5',
+        'green-bg':'#52796F',
+        'grey-bg':'#2F3E46',
+        'png':'#BDA047',
+      'light-green':'#84A98C'
       },
+      fontFamily:{
+        'arabic':['"Al Qalam Quran"']
+      }
     },
     container:{
       center: true,
