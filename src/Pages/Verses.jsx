@@ -5,6 +5,7 @@ import { clearVerses } from "../redux/actions";
 import { useParams } from "react-router-dom";
 import { fetchTranslation } from "../redux/thunk/fetchTranslation";
 import png from "../images/verse.png";
+
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,7 +19,7 @@ export const Verses = () => {
     const doc = new DOMParser().parseFromString(input, "text/html");
     return doc.body.textContent || "";
   }
-  
+
   const dispatchVerses = useDispatch();
   useEffect(() => {
     dispatchVerses(fetchChapterVerses(id));
@@ -51,6 +52,8 @@ const navigate=useNavigate()
           className="flex flex-row
           mx-3 my-3"
         >
+        
+
           <button
             className="bg-green-bg
      text-white

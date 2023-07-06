@@ -17,7 +17,7 @@ const NavBar = () => {
     navigate('/')
   }
   const handleGlobeClick=()=>{
-
+navigate('/languages')
   }
   return (
     <div>

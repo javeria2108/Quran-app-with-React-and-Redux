@@ -12,6 +12,9 @@ export const FETCH_TRANSLATION_FAILURE='FETCH_TRANSLATION_FAILURE';
 export const FETCH_AUDIO_REQUEST = 'FETCH_AUDIO_REQUEST';
 export const FETCH_AUDIO_SUCCESS = 'FETCH_AUDIO_SUCCESS';
 export const FETCH_AUDIO_FAILURE = 'FETCH_AUDIO_FAILURE';
+export const FETCH_LANGUAGES_REQUEST = 'FETCH_LANGUAGES_REQUEST';
+export const FETCH_LANGUAGES_SUCCESS = 'FETCH_LANGUAGES_SUCCESS';
+export const FETCH_LANGUAGES_FAILURE = 'FETCH_LANGUAGES_FAILURE';
 
 export const fetchChaptersRequest = () => ({
   type: FETCH_CHAPTERS_REQUEST
@@ -58,3 +61,16 @@ export const fetchTranslationFailure = error => ({
 export const fetchAudioRequest = () => ({ type: FETCH_AUDIO_REQUEST });
 export const fetchAudioSuccess = audio => ({ type: FETCH_AUDIO_SUCCESS, payload: audio });
 export const fetchAudioFailure = error => ({ type: FETCH_AUDIO_FAILURE, payload: error });
+export const fetchLanguagesRequest = () => ({
+  type: FETCH_LANGUAGES_REQUEST,
+});
+
+export const fetchLanguagesSuccess = (languages) => ({
+  type: FETCH_LANGUAGES_SUCCESS,
+  payload: languages,
+});
+
+export const fetchLanguagesFailure = (error) => ({
+  type: FETCH_LANGUAGES_FAILURE,
+  payload: error,
+});
