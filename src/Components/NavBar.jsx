@@ -16,6 +16,9 @@ const NavBar = () => {
   const handleHomeClick=()=>{
     navigate('/')
   }
+  const handleGlobeClick=()=>{
+
+  }
   return (
     <div>
         <header className='flex flex-row justify-between w-full h-16 bg-green-bg '>
@@ -25,7 +28,7 @@ const NavBar = () => {
               md:text-xl 
               lg:text-2xl 
               py-2 
-              px-2
+              px-1
               md:py-3 
               md:px-6 
               lg:py-4 
@@ -43,14 +46,15 @@ const NavBar = () => {
                md:text-xl 
                lg:text-2xl 
                py-2 
-               px-2
+               px-1
                md:py-3 
                md:px-6 
                lg:py-4 
                lg:px-8 
                w-16 h-16
                transition duration-500 ease-in-out transform 
-       hover:text-grey-bg'>
+       hover:text-grey-bg'
+       onClick={handleGlobeClick}>
                 
                 {globe}
               </button>
@@ -59,7 +63,7 @@ const NavBar = () => {
             md:text-xl 
             lg:text-2xl 
             py-2 
-            px-2
+            px-1
             md:py-3 
             md:px-6 
             lg:py-4 
@@ -77,7 +81,7 @@ const NavBar = () => {
             md:text-xl 
             lg:text-2xl 
             py-2 
-            px-4 
+            px-1
             md:py-3 
             md:px-6 
             lg:py-4 
