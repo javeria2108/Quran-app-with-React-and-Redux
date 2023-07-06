@@ -1,12 +1,18 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faPlay,faGlobe ,faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-
+import { faBars, faPlay,faGlobe ,faHome} from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router-dom';
 const bars = <FontAwesomeIcon icon={faBars} />;
 const globe = <FontAwesomeIcon icon={faGlobe} />;
-const search =<FontAwesomeIcon icon={faMagnifyingGlass}/>
+const home =<FontAwesomeIcon icon={faHome}/>
 const play=<FontAwesomeIcon icon={faPlay}/>
 const NavBar = () => {
+  const navigate=useNavigate()
+  const handlePlayClick = () => {
+    
+    
+    navigate('/player/1')
+  };
   return (
     <div>
         <header className='flex flex-row justify-between w-full h-16 bg-green-bg '>
@@ -16,7 +22,7 @@ const NavBar = () => {
               md:text-xl 
               lg:text-2xl 
               py-2 
-              px-4 
+              px-2
               md:py-3 
               md:px-6 
               lg:py-4 
@@ -34,7 +40,7 @@ const NavBar = () => {
                md:text-xl 
                lg:text-2xl 
                py-2 
-               px-4
+               px-2
                md:py-3 
                md:px-6 
                lg:py-4 
@@ -50,7 +56,7 @@ const NavBar = () => {
             md:text-xl 
             lg:text-2xl 
             py-2 
-            px-4 
+            px-2
             md:py-3 
             md:px-6 
             lg:py-4 
@@ -60,7 +66,7 @@ const NavBar = () => {
     hover:text-grey-bg'>
              
               
-                {search}
+                {home}
               </button>
               <button  className='text-green-200 
             
@@ -74,7 +80,8 @@ const NavBar = () => {
             lg:px-8 
             w-16 h-16
             transition duration-500 ease-in-out transform 
-    hover:text-grey-bg '>
+    hover:text-grey-bg '
+    onClick={handlePlayClick}>
              
               
                 {play}
