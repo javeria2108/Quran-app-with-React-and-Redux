@@ -89,29 +89,30 @@ if (chapterInfo) {
       </audio>
 
       <div className="mt-6 flex flex-col justify-center items-center">
-      <h1 className="text-4xl">{chapterNameSimple}</h1>
+      <h1 className="text-4xl">{chapterNameSimple }</h1>
 <div className="w-96 min-h-max py-2 object-cover">
 <img src={Image}/>
 </div>
 
-<h1 className="text-3xl">{chapterNameArabic}</h1>
+<h1 className="text-3xl py-2">{chapterNameArabic}</h1>
       </div>
       
-      <div className="flex flex-row mx-5 py-1 sm:mx-12 sm:py-3 md:mx-20 rounded-full bg-black  align-bottom justify-center space-x-4">
+      <div className="flex flex-row mx-5 py-1 sm:mx-12 sm:py-3 md:mx-20 rounded-full bg-slate-950
+       align-bottom justify-center space-x-4 ">
       <button 
-          className="px-4 py-2 text-white text-xl sm:text-2xl cursor-pointer"
+          className="px-4 py-2 text-white text-xl sm:text-2xl cursor-pointer hover:text-zinc-500"
         onClick={handleBackward} >{backward}
         </button>
         <button 
-          className="px-6 sm:px-10 py-2 text-white text-xl sm:text-2xl cursor-pointer"
+          className="px-6 sm:px-10 py-2 text-green-bg text-xl sm:text-2xl cursor-pointer hover:text-green-950"
           onClick={togglePlayPause}>
           {isPlaying ? pause : play}
         </button>
         <button 
-          className="px-4 py-2 text-white text-xl sm:text-2xl cursor-pointer"
+          className="px-4 py-2 text-white text-xl sm:text-2xl cursor-pointer  hover:text-zinc-500"
        onClick={handleForward}  >{forward}
         </button>
-        {/* You can add more controls here */}
+        
       </div>
       </div>
     </div>
