@@ -27,7 +27,7 @@ export function QuranAudioPlayer() {
 
     return (
       <div className="flex justify-center items-center h-screen bg-gradient-to-b from-cyan-700 to-slate-950 text-white">
-     <div className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-3/4 sm:h-11/12 md:h-10/12 lg:h-3/4 bg-white rounded shadow p-5">
+     <div className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-3/4 sm:h-11/12 md:h-10/12 lg:h-3/4 bg-black bg-opacity-50 rounded shadow p-5">
       <audio ref={audioRef} src={audioUrl} preload="metadata">
         Your browser does not support the audio element.
       </audio>
