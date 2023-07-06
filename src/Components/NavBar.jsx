@@ -13,6 +13,9 @@ const NavBar = () => {
     
     navigate('/player/1')
   };
+  const handleHomeClick=()=>{
+    navigate('/')
+  }
   return (
     <div>
         <header className='flex flex-row justify-between w-full h-16 bg-green-bg '>
@@ -63,7 +66,8 @@ const NavBar = () => {
             lg:px-8 
             w-16 h-16
             transition duration-500 ease-in-out transform 
-    hover:text-grey-bg'>
+    hover:text-grey-bg'
+    onClick={handleHomeClick}>
              
               
                 {home}
