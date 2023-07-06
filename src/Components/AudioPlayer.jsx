@@ -2,6 +2,15 @@ import { useEffect,useRef,useState  } from "react";
 import { useParams } from 'react-router-dom';
 import { fetchAudioUrl } from "../redux/thunk/fetchAudio";
 import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay,faPause,faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
+
+
+
+const play=<FontAwesomeIcon icon={faPlay}/>
+const pause=<FontAwesomeIcon icon={faPause}/>
+const forward=<FontAwesomeIcon icon={faForwardStep}/>
+const backward=<FontAwesomeIcon icon={faBackwardStep}/>
 export function QuranAudioPlayer() {
   const { id } = useParams();
   const dispatchAudio = useDispatch();
@@ -32,11 +41,19 @@ export function QuranAudioPlayer() {
         Your browser does not support the audio element.
       </audio>
       
-      <div className="flex space-x-4">
+      <div className="flex flex-row mx-5 py-1 sm:mx-8 sm:py-3 rounded-full bg-black mt-60 sm:mt-80 align-bottom justify-center space-x-4">
+      <button 
+          className="px-4 py-2 text-white text-xl sm:text-2xl cursor-pointer"
+         >{backward}
+        </button>
         <button 
-          className="px-4 py-2 bg-blue-500 text-white cursor-pointer"
+          className="px-6 sm:px-10 py-2 text-white text-xl sm:text-2xl cursor-pointer"
           onClick={togglePlayPause}>
-          {isPlaying ? 'Pause' : 'Play'}
+          {isPlaying ? pause : play}
+        </button>
+        <button 
+          className="px-4 py-2 text-white text-xl sm:text-2xl cursor-pointer"
+         >{forward}
         </button>
         {/* You can add more controls here */}
       </div>
