@@ -18,9 +18,7 @@ export function QuranAudioPlayer() {
   const audioUrl = useSelector((state)=>state.audio.audioUrl);
   const chapters = useSelector((state) => state.chapters.data);
   const [isPlaying, setPlaying] = useState(false);
-  const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [imgId,setImgId]=useState(0);
+
     const audioRef = useRef();
     useEffect(() => {
       dispatchAudio(fetchAudioUrl(id));
@@ -41,29 +39,12 @@ export function QuranAudioPlayer() {
   const togglePlayPause = () => {
     setPlaying(!isPlaying);
   };
-  useEffect(() => {
-    fetch("https://pixabay.com/api/?key=36974515-bb15443a977915a9a4d80a37a&q=night%20sky&image_type=photo&pretty=true")
-      .then(res => {
-        console.log("Response Status:", res.status);
-       return res.json()})
-      .then(data => {
-        setImages(data.hits);
-        setIsLoading(false);
-      })
-      .catch(err => console.log(err));
-  }, []);
-  console.log(images);
-const Image=images[imgId];
+ 
 const handleForward=()=>{
   if (id < 114) {
     setId(id + 1);
     setPlaying(false)
-    if ((imgId+1)%20 === 0){
-      setImgId(0);
-    }
-    else{
-      setImgId(imgId+1);
-    }
+    
   }
   }
 const handleBackward=()=>{
@@ -94,7 +75,7 @@ if (chapterInfo) {
       <div className="mt-6 flex flex-col justify-center items-center">
       <h1 className="text-4xl">{chapterNameSimple}</h1>
 <div className="w-96 min-h-max py-2 object-cover">
-<img src={Image.webformatURL}/>
+
 </div>
 
 <h1 className="text-3xl">{chapterNameArabic}</h1>
