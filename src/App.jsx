@@ -5,6 +5,7 @@ import { Verses } from "./Pages/Verses";
 import {Routes, Route } from 'react-router-dom';
 import {QuranAudioPlayer} from "./Pages/AudioPlayer";
 import Languages from "./Pages/Languages";
+import Translations from "./Pages/Translations";
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/verses/:id" element={<Verses />} />
         <Route path="/player/:id" element={<QuranAudioPlayer/>} />
         <Route path="/languages" element={<Languages/>}/>
+        <Route path="/translations/:name" element={<Translations/>}/>
       </Routes>
       
      </div>

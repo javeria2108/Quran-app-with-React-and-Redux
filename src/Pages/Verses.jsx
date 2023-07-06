@@ -15,6 +15,7 @@ export const Verses = () => {
   const verses = useSelector((state) => state.verses.data);
   const Translation = useSelector((state) => state.translation.data);
   const [translate, setTranslate] = useState(false);
+  const translationId = useSelector((state) => state.translationId);
   function cleanHTMLTags(input) {
     const doc = new DOMParser().parseFromString(input, "text/html");
     return doc.body.textContent || "";
@@ -30,8 +31,8 @@ export const Verses = () => {
 
   const dispatchTranslation = useDispatch();
   useEffect(() => {
-    dispatchTranslation(fetchTranslation(id));
-  }, [dispatchTranslation, id]);
+    dispatchTranslation(fetchTranslation(id,translationId));
+  }, [dispatchTranslation, id, translationId]);
  
   
 
