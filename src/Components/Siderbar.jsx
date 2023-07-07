@@ -9,10 +9,10 @@ navigate('/languages')
 navigate('/reciters/1')
     }
     const handleAboutClick=()=>{
-
+navigate('/about')
     }
     const handleFeedbackClick=()=>{
-
+navigate('/feedback')
     }
   return (
     <div className=' '>

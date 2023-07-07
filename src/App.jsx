@@ -8,6 +8,8 @@ import Languages from "./Pages/Languages";
 import Translations from "./Pages/Translations";
 import { Reciters } from "./Pages/Reciters";
 import Layout from "./Components/Layout";
+import About from "./Pages/About";
+import { FeedbackForm } from "./Pages/FeedbackForm";
 function App() {
 
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/languages" element={<Languages/>}/>
         <Route path="/reciters/:chapterId" element={<Reciters/>}/>
         <Route path="/translations/:name" element={<Translations/>}/>
+        <Route path="/feedback" element={<FeedbackForm/>}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>
       
      </div>
