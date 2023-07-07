@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="bg-green-bg">
       <footer className="text-white py-8 px-8">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between">
+        <div className="container mx-auto flex flex-row justify-between">
           <div className="mr-36 sm:mr-48 md:mr-120">
             <h2 className="text-xl mt-6 font-bold">QuranWorld</h2>
             <p className="mt-2">Read your favourite translations and <br/> listen to your 
