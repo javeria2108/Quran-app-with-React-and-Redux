@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate=useNavigate();
+    const home=()=>{navigate('/')}
+    const player=()=>{navigate('/player/1')}
+    const verses=()=>{navigate('/verses/1')}
+    const about=()=>{navigate('/about')}
+    const translation=()=>{navigate('/languages')}
+
   return (
     <div className="bg-green-bg">
       <footer className="text-white py-8 px-8">
@@ -15,19 +23,19 @@ const Footer = () => {
             <ul className="mt-2 sm:ml-8">
             <h3 className="text-lg mt-6 font-bold">Links</h3>
               <li>
-                <a className="text-slate-950 hover:text-white" href="/">Home</a>
+                <p className="text-slate-950 hover:text-white" onClick={home}>Home</p>
               </li>
               <li>
-                <a className="text-slate-950 hover:text-white" href="/About">About</a>
+                <p className="text-slate-950 hover:text-white" onClick={about}>About</p>
               </li>
               <li>
-                <a className="text-slate-950 hover:text-white" href="/verses/1">Read Quran</a>
+                <p className="text-slate-950 hover:text-white" onClick={verses}>Read Quran</p>
               </li>
               <li>
-                <a className="text-slate-950 hover:text-white" href="/player/1">Play audio</a>
+                <p className="text-slate-950 hover:text-white" onClick={player}>Play audio</p>
               </li>
               <li>
-                <a className="text-slate-950 hover:text-white" href="/languages">Translation settings</a>
+                <p className="text-slate-950 hover:text-white" onClick={translation}>Translation settings</p>
               </li>
             </ul>
           </div>
