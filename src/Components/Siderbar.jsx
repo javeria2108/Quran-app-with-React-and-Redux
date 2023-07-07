@@ -16,7 +16,7 @@ navigate('/feedback')
     }
   return (
     <div className=' '>
-        <div className='flex flex-col items-start h-screen border-r-2 border-t-2 border-grey-l w-full text-xl text-white '>
+        <div className='flex flex-col items-start border-t-2 border-grey-l w-full text-xl text-white '>
             <p className='hover:cursor-pointer w-full py-2
              sm:py-4 px-3 sm:px-5 mt-3 sm:mt-5 hover:bg-green-bg
              hover:text-slate-950'

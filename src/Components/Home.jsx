@@ -33,7 +33,7 @@ const handleChapterClick=(id)=>{
     <div className="">
       
       <div className="w-full h-fit sm:h-fit bg-hero-pattern flex flex-col items-center justify-center">
-      <div className="flex m-2 mt-10">
+      <div className="flex m-2 mt-14">
       <AnimatePresence>
     {"Welcome to Quran World!".split("").map((char, i) => {
         return (
