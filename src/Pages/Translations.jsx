@@ -1,8 +1,9 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { fetchTranslationsList } from '../redux/thunk/fetchTranslationsList';
 import { useParams } from 'react-router-dom';
 import { setTranslationId } from '../redux/actions';
+import { useNavigate } from 'react-router-dom';
 const Translations = () => {
     const dispatch=useDispatch();
     const translationsList = useSelector(state => state.translationsList.translationsList);
@@ -10,19 +11,23 @@ const Translations = () => {
     useEffect(() => {
       dispatch(fetchTranslationsList());
     }, [dispatch, name]);
-    
+ const [msg,setMsg]=useState(false)   
 const filteredTranslations=translationsList.filter(translation => 
     translation.language_name.toLowerCase().trim() === name.toLowerCase().trim()
 
 );
-
+const navigate=useNavigate()
 const handleClick=(id)=>{
-    console.log(id);
+    
     dispatch(setTranslationId(id));
+    setMsg(true);
+    navigate('/verses/1')
+
 }
   return (
     <div className=" flex flex-col mx-8 my-4 p-2 justify-center items-center sm:items-start">
       <h1 className="text-light-green mb-2 text-xl  sm:text-2xl">Choose Translation:</h1>
+      
         {filteredTranslations.map((translation)=>{
             return(
                 

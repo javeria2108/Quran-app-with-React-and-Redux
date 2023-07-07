@@ -4,7 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchChapters } from "../redux/thunk";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
-import bgpng from '../images/bg.png'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+const play=<FontAwesomeIcon icon={faPlay}/>
+const handlePlayClick = () => {
+    
+    
+  navigate('/player/1')
+};
 const Home = () => {
   const chapters = useSelector((state) => state.chapters.data);
   const dispatch = useDispatch();
@@ -20,34 +27,45 @@ const handleChapterClick=(id)=>{
   }
   return (
     <div className="">
-      <div>
-      <img
-    className="w-full"
-    style={{height: '50vh'}}
-    src={bgpng} 
-    alt="Image Description"
-/>
-      </div>
-      <Search />
-      <div className="flex flex-wrap justify-center">
+      
+      <div className="w-full h-80 sm:h-96 bg-hero-pattern flex flex-col items-center justify-between">
+        <h1 className="text-2xl sm:text-4xl m-2 text-white mt-10">
+          Welcome to Quran World!  </h1>
+<p className="text-white text-xl sm:text-2xl">Click below to play melodious recitations</p>
+<button 
+          className=" text-green-bg text-2xl sm:text-3xl cursor-pointer hover:text-green-950
+          mt-2"
+          onClick={handlePlayClick}>
+         {play}
+        </button>
+      <div className="mb-5 sm:mb-8">  <Search /></div> </div>
+     
+      <div className="flex flex-col  justify-center mt-3">
+        <hr/>
         {chapters.map((chapter) => {
           return (
             <div
-              className="box-content w-56 h-20 m-5 border-2
-                 p-5 text-white hover:cursor-pointer "
+              className=" w-full  
+                 py-5 px-5 text-white hover:cursor-pointer "
               key={chapter.id}
               onClick={() => handleChapterClick(chapter.id)}
             >
-              <div className="flex flex-row justify-between">
-                <p>{chapter.name_simple}</p>
+              <div className="m-3">
+              <div className="flex flex-row  justify-between text-xl sm:text-2xl">
+                <p className="hover:underline">{chapter.id + '. '}{chapter.name_simple}</p>
                 <p>{chapter.name_arabic}</p>
               </div>
-              <div>
+              <h1 className="text-green-bg sm:text-xl text-lgs">
+                Chapter Info: 
+              </h1>
+              <p>{'translated name: '+chapter.translated_name.name}</p>
                 <p>{"verses: " + chapter.verses_count}</p>
                 <p>{"Revelead in: " + chapter.revelation_place}</p>
 
-                <p>{chapter.translated_name.name}</p>
+                
               </div>
+
+              <hr className="mt-5 border-grey-l" />
             </div>
           );
         })}

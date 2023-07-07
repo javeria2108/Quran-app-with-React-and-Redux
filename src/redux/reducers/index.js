@@ -6,6 +6,8 @@ import translationReducer from "./TranslationReducer";
 import audioReducer from "./AudioReducer";
 import translationsListReducer from "./TranslationListReducer";
 import { idReducer } from "./translationIdReducer";
+import { recitersListReducer } from "./RecitersReducer";
+import { reciterIdReducer } from "./reciterIdReducer";
 import languagesReducer from "./LanguagesReducer";
 const rootReducer=combineReducers({
     chapters:chapterReducer,
@@ -14,6 +16,8 @@ const rootReducer=combineReducers({
     audio:audioReducer,
     languages:languagesReducer,
     translationsList:translationsListReducer,
-    translationId:idReducer
+    translationId:idReducer,
+    reciters:recitersListReducer,
+    reciterId:reciterIdReducer
 })
 export default rootReducer;

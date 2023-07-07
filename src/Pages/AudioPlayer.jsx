@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay,faPause,faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
 import { fetchChapters } from "../redux/thunk";
 
-
+import { useNavigate } from "react-router-dom";
 const play=<FontAwesomeIcon icon={faPlay}/>
 const pause=<FontAwesomeIcon icon={faPause}/>
 const forward=<FontAwesomeIcon icon={faForwardStep}/>
@@ -18,12 +18,13 @@ export function QuranAudioPlayer() {
   const audioUrl = useSelector((state)=>state.audio.audioUrl);
   const chapters = useSelector((state) => state.chapters.data);
   const [isPlaying, setPlaying] = useState(false);
-
+  const reciterId = useSelector((state) => state.reciterId);
+  console.log(reciterId)
   const [imgId,setImgId]=useState(0);
     const audioRef = useRef();
     useEffect(() => {
-      dispatchAudio(fetchAudioUrl(id));
-    }, [dispatchAudio, id]);
+      dispatchAudio(fetchAudioUrl(id,reciterId));
+    }, [dispatchAudio, id,reciterId]);
 
   
   useEffect(() => {
@@ -60,6 +61,10 @@ const handleBackward=()=>{
     setPlaying(false)
   }
 }
+const navigate=useNavigate()
+const handleReciterClick=()=>{
+navigate(`/reciters/${id}`)
+}
 const chapterInfo=chapters[id-1];
 let chapterNameSimple, chapterNameArabic;
 if (chapterInfo) {
@@ -88,7 +93,10 @@ if (chapterInfo) {
         Your browser does not support the audio element.
       </audio>
 
-      <div className="mt-6 flex flex-col justify-center items-center">
+     
+      
+    <div className="mt-6 flex flex-col justify-center items-center">
+    <button onClick={handleReciterClick}>Change Reciter</button>
       <h1 className="text-4xl">{chapterNameSimple }</h1>
 <div className="w-96 min-h-max py-2 object-cover">
 <img src={Image}/>

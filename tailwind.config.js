@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/src/images/bg.png')",
+       
+      },
       colors: {
         'dark-grey': '#354F52',
         'grey-l':'#CAD2C5',

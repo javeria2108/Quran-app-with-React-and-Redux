@@ -108,23 +108,22 @@ const navigate=useNavigate()
                     >
                       {verse.text_indopak}{" "}
                     </p>
-                    <span
-                      className="p-2 m-2
-            text-white "
-                    >
-                      {" " + verse.verse_key}
-                    </span>
+                   
                     {translate && (
                       <div>
-                        <div className="text-white">
+                        <div className="text-white text-center"
+                         dir="rtl">
                           {cleanHTMLTags(translation.text)}
                         </div>
-                        <p className="text-green-bg italic">
-                          {" "}
-                          Dr.Mustafa Khattab, the Clear Quran
-                        </p>
+                       
                       </div>
                     )}
+                     <span
+                      className="p-2 m-2
+            text-green-bg italic "
+                   >
+                      {" " + verse.verse_key}
+                    </span>
                   </div>
                 );
               })}
