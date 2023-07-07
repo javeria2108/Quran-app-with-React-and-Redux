@@ -20,6 +20,9 @@ const Layout = ({ children }) => {
         <main className={`transition-all duration-300 flex-grow overflow-auto ${sidebarVisible ? 'ml-40' : 'ml-0'} ${sidebarVisible ? 'sm:ml-56' : 'ml-0'}`}>
           {children}
         </main>
+        <div>
+            
+        </div>
       </div>
     </div>
   );

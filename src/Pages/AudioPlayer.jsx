@@ -71,7 +71,7 @@ if (chapterInfo) {
 
 
     return (
-      <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-b from-cyan-700 to-slate-950 text-white">
+      <div className="flex flex-col mt-12 justify-center items-center h-screen bg-gradient-to-b from-cyan-700 to-slate-950 text-white">
      <div className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 h-fit bg-black bg-opacity-50 rounded shadow p-5">
       <audio ref={audioRef} src={audioUrl} preload="metadata">
         Your browser does not support the audio element.

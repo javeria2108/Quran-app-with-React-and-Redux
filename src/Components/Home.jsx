@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from 'framer-motion';
-
+import Footer from "./Footer";
 const play=<FontAwesomeIcon icon={faPlay}/>
 
 const Home = () => {
@@ -92,6 +92,7 @@ const handleChapterClick=(id)=>{
           );
         })}
       </div>
+      <Footer/>
     </div>
   );
 };
