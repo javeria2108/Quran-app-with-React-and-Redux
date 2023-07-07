@@ -20,7 +20,7 @@ export const Reciters = () => {
     }
 
   return (
-    <div className=" flex flex-col mx-8 mt-16 mb-4 p-2 justify-center items-start">
+    <div className=" flex flex-col mx-8 mb-4 p-2 justify-center items-start">
     <h1 className="text-light-green mb-2 text-xl  sm:text-2xl">Choose Reciter:</h1>
     
       {recitersList.map((reciter)=>{

@@ -25,7 +25,7 @@ export const FeedbackForm = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
 const msg=()=>{
 return(
-    <div className="w-2/3 md:w-1/3 bg-white rounded-lg items-center">
+    <div className="w-full sm:w-2/3 md:w-1/3 bg-white rounded-lg items-center">
 <h2 className="text-3xl text-center text-gray-700 mb-4 mt-4">
 Thanks for your feedback!
     </h2>

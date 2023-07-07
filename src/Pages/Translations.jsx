@@ -25,7 +25,7 @@ const handleClick=(id)=>{
 
 }
   return (
-    <div className=" flex flex-col mx-8 my-4 p-2 justify-center items-center sm:items-start">
+    <div className=" flex flex-col mx-8 my-4 p-2 justify-center items-start">
       <h1 className="text-light-green mb-2 text-xl  sm:text-2xl">Choose Translation:</h1>
       
         {filteredTranslations.map((translation)=>{

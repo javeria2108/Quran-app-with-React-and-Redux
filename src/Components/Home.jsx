@@ -32,13 +32,13 @@ const handleChapterClick=(id)=>{
   return (
     <div className="">
       
-      <div className="w-full h-80 sm:h-96 bg-hero-pattern flex flex-col items-center justify-center">
+      <div className="w-full h-fit sm:h-fit bg-hero-pattern flex flex-col items-center justify-center">
       <div className="flex m-2 mt-10">
       <AnimatePresence>
     {"Welcome to Quran World!".split("").map((char, i) => {
         return (
             <motion.h1
-                className="text-2xl sm:text-4xl  text-white"
+                className="text-2xl sm:text-4xl md:text-5xl text-white"
                 key={i}
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -59,9 +59,9 @@ const handleChapterClick=(id)=>{
           onClick={handlePlayClick}>
          {play}
         </button>
-      
+        <div className="mb-5 sm:mb-8">  <Search /></div>
       </div>
-      <div className="mb-5 sm:mb-8 ">  <Search /></div>
+    
       <div className="flex flex-col  justify-center ">
         <hr/>
         {chapters.map((chapter) => {

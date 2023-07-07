@@ -36,7 +36,7 @@ navigate('/languages')
       hover:text-grey-bg'
       onClick={onBarsClick} >{bars}</button>
             <h1 className='
-            mt-2 sm:mt-0 px-1 sm:py-4 sm:pl-6 text-white font-bold
+            mt-2 pt-2 sm:mt-0 px-1 py-2 sm:py-4 sm:pl-6 text-white font-bold
             text-xl'>QuranWorld</h1>
             </div>
             <div className='flex flex-row mr-1 sm:mr-6 '>

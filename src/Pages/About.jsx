@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="container mx-auto mt-16 px-4 py-8 text-white">
+    <div className="container mx-auto px-4 py-8 text-white">
       <h1 className="text-3xl font-bold mb-4">About QuranWorld</h1>
       <p className="text-lg mb-4">
         QuranWorld is a platform designed to provide a seamless experience for reading, listening, and exploring the Holy Quran. Our goal is to make the Quran accessible to people from all walks of life, allowing them to engage with the sacred text in a meaningful way.
