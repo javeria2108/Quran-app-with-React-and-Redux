@@ -28,7 +28,7 @@ const handleChapterClick=(id)=>{
   return (
     <div className="">
       
-      <div className="w-full h-80 sm:h-96 bg-hero-pattern flex flex-col items-center justify-between">
+      <div className="w-full h-80 sm:h-96 bg-hero-pattern flex flex-col items-center justify-center">
         <h1 className="text-2xl sm:text-4xl m-2 text-white mt-10">
           Welcome to Quran World!  </h1>
 <p className="text-white text-xl sm:text-2xl">Click below to play melodious recitations</p>
@@ -38,9 +38,10 @@ const handleChapterClick=(id)=>{
           onClick={handlePlayClick}>
          {play}
         </button>
-      <div className="mb-5 sm:mb-8">  <Search /></div> </div>
-     
-      <div className="flex flex-col  justify-center mt-3">
+      
+      </div>
+      <div className="mb-5 sm:mb-8 ">  <Search /></div>
+      <div className="flex flex-col  justify-center ">
         <hr/>
         {chapters.map((chapter) => {
           return (
