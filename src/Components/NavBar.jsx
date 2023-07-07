@@ -29,17 +29,14 @@ navigate('/languages')
               lg:text-2xl 
               py-2 
               px-1
-              md:py-3 
-              md:px-6 
-              lg:py-4 
-              lg:px-8 
+             sm:py-3 sm:px-6
               w-16 h-16
               transition duration-500 ease-in-out transform 
       hover:text-grey-bg'>{bars}</button>
             <h1 className='py-4 pl-6 text-white font-bold
             text-xl'>QuranWorld</h1>
             </div>
-            <div className='flex flex-row mr-6 '>
+            <div className='flex flex-row mr-2 sm:mr-6 '>
               <button
                className='text-white 
             
@@ -47,10 +44,7 @@ navigate('/languages')
                lg:text-2xl 
                py-2 
                px-1
-               md:py-3 
-               md:px-6 
-               lg:py-4 
-               lg:px-8 
+               sm:py-3 sm:px-6
                w-16 h-16
                transition duration-500 ease-in-out transform 
        hover:text-grey-bg'
@@ -64,10 +58,7 @@ navigate('/languages')
             lg:text-2xl 
             py-2 
             px-1
-            md:py-3 
-            md:px-6 
-            lg:py-4 
-            lg:px-8 
+            sm:py-3 sm:px-6
             w-16 h-16
             transition duration-500 ease-in-out transform 
     hover:text-grey-bg'
@@ -82,10 +73,7 @@ navigate('/languages')
             lg:text-2xl 
             py-2 
             px-1
-            md:py-3 
-            md:px-6 
-            lg:py-4 
-            lg:px-8 
+            sm:py-3 sm:px-6
             w-16 h-16
             transition duration-500 ease-in-out transform 
     hover:text-grey-bg '
