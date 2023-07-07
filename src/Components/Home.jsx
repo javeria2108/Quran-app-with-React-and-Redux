@@ -7,12 +7,8 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from 'framer-motion';
+
 const play=<FontAwesomeIcon icon={faPlay}/>
-const handlePlayClick = () => {
-    
-    
-  navigate('/player/1')
-};
 
 const Home = () => {
   const chapters = useSelector((state) => state.chapters.data);
@@ -21,6 +17,12 @@ const Home = () => {
     dispatch(fetchChapters());
   }, [dispatch]);
 const navigate = useNavigate();
+const handlePlayClick = () => {
+    
+    
+  navigate('/player/1')
+};
+
 const [Id,setId]=useState(1);
 const handleChapterClick=(id)=>{
     console.log('clicked '+id)

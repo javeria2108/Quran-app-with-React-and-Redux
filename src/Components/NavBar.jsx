@@ -30,10 +30,11 @@ navigate('/languages')
               py-2 
               px-1
              sm:py-3 sm:px-6
-              w-16 h-16
+          
               transition duration-500 ease-in-out transform 
       hover:text-grey-bg'>{bars}</button>
-            <h1 className='py-4 pl-6 text-white font-bold
+            <h1 className='
+            sm:py-4 sm:pl-6 py-2 px-1 text-white font-bold
             text-xl'>QuranWorld</h1>
             </div>
             <div className='flex flex-row mr-2 sm:mr-6 '>
