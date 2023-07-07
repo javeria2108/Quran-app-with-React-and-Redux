@@ -6,7 +6,7 @@ const bars = <FontAwesomeIcon icon={faBars} />;
 const globe = <FontAwesomeIcon icon={faGlobe} />;
 const home =<FontAwesomeIcon icon={faHome}/>
 const play=<FontAwesomeIcon icon={faPlay}/>
-const NavBar = () => {
+const NavBar = ({onBarsClick}) => {
   const navigate=useNavigate()
   const handlePlayClick = () => {
     
@@ -21,7 +21,8 @@ navigate('/languages')
   }
   return (
     <div>
-        <header className='flex flex-row justify-between w-full h-16 bg-green-bg '>
+      
+        <header className='flex flex-row fixed justify-between w-full h-16 bg-green-bg '>
           <div className='flex flex-row justify-start'>
             <button className='text-white 
             
@@ -32,9 +33,10 @@ navigate('/languages')
              sm:py-3 sm:px-6
           
               transition duration-500 ease-in-out transform 
-      hover:text-grey-bg'>{bars}</button>
+      hover:text-grey-bg'
+      onClick={onBarsClick} >{bars}</button>
             <h1 className='
-            py-3 px-1 sm:py-4 sm:pl-6 text-white font-bold
+            pt-2 px-1 sm:py-4 sm:pl-6 text-white font-bold
             text-xl'>QuranWorld</h1>
             </div>
             <div className='flex flex-row mr-1 sm:mr-6 '>

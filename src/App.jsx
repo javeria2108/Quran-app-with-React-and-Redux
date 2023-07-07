@@ -7,12 +7,14 @@ import {QuranAudioPlayer} from "./Pages/AudioPlayer";
 import Languages from "./Pages/Languages";
 import Translations from "./Pages/Translations";
 import { Reciters } from "./Pages/Reciters";
+import Layout from "./Components/Layout";
 function App() {
 
   return (
     <>
-    <div className='font-serif grid sm:flex flex-col '>
-     <NavBar/>
+    <Layout>
+    
+    
     
      <Routes>
      <Route path="/" element={<Home />} />
@@ -23,7 +25,8 @@ function App() {
         <Route path="/translations/:name" element={<Translations/>}/>
       </Routes>
       
-     </div>
+     
+     </Layout>
     </>
   );
 }

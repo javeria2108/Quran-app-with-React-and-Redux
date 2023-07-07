@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchChapters());
   }, [dispatch]);
-const navigate = useNavigate();
+const navigate = useNavigate()
 const handlePlayClick = () => {
     
     
