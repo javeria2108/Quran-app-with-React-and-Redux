@@ -6,12 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { AnimatePresence, motion } from 'framer-motion';
 const play=<FontAwesomeIcon icon={faPlay}/>
 const handlePlayClick = () => {
     
     
   navigate('/player/1')
 };
+
 const Home = () => {
   const chapters = useSelector((state) => state.chapters.data);
   const dispatch = useDispatch();
@@ -29,8 +31,25 @@ const handleChapterClick=(id)=>{
     <div className="">
       
       <div className="w-full h-80 sm:h-96 bg-hero-pattern flex flex-col items-center justify-center">
-        <h1 className="text-2xl sm:text-4xl m-2 text-white mt-10">
-          Welcome to Quran World!  </h1>
+      <div className="flex m-2 mt-10">
+      <AnimatePresence>
+    {"Welcome to Quran World!".split("").map((char, i) => {
+        return (
+            <motion.h1
+                className="text-2xl sm:text-4xl  text-white"
+                key={i}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+            >
+                {char === " " ? <span>&nbsp;</span> : char}
+            </motion.h1>
+        );
+    })}
+</AnimatePresence>
+
+
+      </div>
 <p className="text-white text-xl sm:text-2xl">Click below to play melodious recitations</p>
 <button 
           className=" text-green-bg text-2xl sm:text-3xl cursor-pointer hover:text-green-950
