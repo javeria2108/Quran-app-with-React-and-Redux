@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Layout>
-    
+    <div className='font-serif  '>
     
     
      <Routes>
@@ -25,7 +25,7 @@ function App() {
         <Route path="/translations/:name" element={<Translations/>}/>
       </Routes>
       
-     
+     </div>
      </Layout>
     </>
   );

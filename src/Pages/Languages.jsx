@@ -16,7 +16,7 @@ const Languages = () => {
 navigate(`/translations/${name}`)
   }
   return (
-    <div className=" flex flex-col mx-8 my-4 p-2 justify-center items-center sm:items-start text-white text-xl  sm:text-2xl"
+    <div className=" flex flex-col mx-8 mb-4 mt-16 p-2 justify-center items-center sm:items-start text-white text-xl  sm:text-2xl"
     >
         <h1 className="text-light-green">Choose a Language for Translation:</h1>
          {languages && Array.isArray(languages) && languages.map((language) => {
