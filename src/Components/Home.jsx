@@ -59,7 +59,7 @@ const handleChapterClick=(id)=>{
           onClick={handlePlayClick}>
          {play}
         </button>
-        <div className="mb-5 sm:mb-8">  <Search /></div>
+        <div className="mb-8 sm:mb-12">  <Search /></div>
       </div>
     
       <div className="flex flex-col  justify-center ">

@@ -1,7 +1,9 @@
 import React from 'react';
+import Footer from '../Components/Footer';
 
 const About = () => {
   return (
+    <div>
     <div className="container mx-auto px-4 py-8 text-white">
       <h1 className="text-3xl font-bold mb-4">About QuranWorld</h1>
       <p className="text-lg mb-4">
@@ -19,6 +21,8 @@ const About = () => {
       <p className="text-lg mb-4">
         May the blessings and guidance of the Quran be with you on your path of knowledge and enlightenment.
       </p>
+    </div>
+    <Footer/>
     </div>
   );
 }

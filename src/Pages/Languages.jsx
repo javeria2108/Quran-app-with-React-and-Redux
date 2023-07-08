@@ -2,6 +2,7 @@ import { fetchLanguages } from "../redux/thunk/fetchLanguages";
 import { useSelector, useDispatch } from "react-redux";
 import React ,{useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
+import Footer from "../Components/Footer";
 
 const Languages = () => {
     const dispatchLang = useDispatch();
@@ -16,6 +17,7 @@ const Languages = () => {
 navigate(`/translations/${name}`)
   }
   return (
+    <div>
     <div className=" flex flex-col mx-8 mb-4  p-2 justify-center items-center sm:items-start text-white text-xl  sm:text-2xl"
     >
         <h1 className="text-light-green">Choose a Language for Translation:</h1>
@@ -27,6 +29,8 @@ navigate(`/translations/${name}`)
           </div>
         )
       })}</div>
+      <Footer/>
+      </div>
   )
 }
 

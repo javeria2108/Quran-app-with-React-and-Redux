@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { setReciterId } from '../redux/actions';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchRecitersList } from '../redux/thunk/fetchRecitersList';
+import Footer from '../Components/Footer';
 export const Reciters = () => {
     
     const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export const Reciters = () => {
     }
 
   return (
+    <div>
     <div className=" flex flex-col mx-8 mb-4 p-2 justify-center items-start">
     <h1 className="text-light-green mb-2 text-xl  sm:text-2xl">Choose Reciter:</h1>
     
@@ -33,6 +35,8 @@ export const Reciters = () => {
               </div>
           )
       })}
+  </div>
+  <Footer/>
   </div>
   )
 }

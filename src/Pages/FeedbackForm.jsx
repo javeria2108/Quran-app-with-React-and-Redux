@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import emailjs from 'emailjs-com';
+import Footer from '../Components/Footer';
 export const FeedbackForm = () => {
   const [Submit,setSubmit]=useState(false)
   const navigate=useNavigate()
@@ -25,7 +26,7 @@ export const FeedbackForm = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
 const msg=()=>{
 return(
-    <div className="w-5/6 sm:w-1/3 bg-white rounded-lg items-center">
+    <div className="w-full md:w-1/3 bg-white rounded-lg items-center">
 <h2 className="text-3xl text-center text-gray-700 mb-4 mt-4">
 Thanks for your feedback!
     </h2>
@@ -36,7 +37,7 @@ Thanks for your feedback!
 )
 }
   return (
-    <div className='mt-16'>
+    <div className=''>
         <div className="h-screen flex items-center justify-center">
         {Submit ? msg() :
   <form onSubmit={handleSubmit(onSubmit)}
@@ -109,6 +110,7 @@ className="w-full mt-6 py-2 rounded bg-green-bg hover:bg-slate-950 text-gray-100
   </form>
 }
 </div>
+<Footer/>
     </div>
   )
 }

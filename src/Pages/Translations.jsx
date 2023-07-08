@@ -4,6 +4,7 @@ import { fetchTranslationsList } from '../redux/thunk/fetchTranslationsList';
 import { useParams } from 'react-router-dom';
 import { setTranslationId } from '../redux/actions';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Components/Footer';
 const Translations = () => {
     const dispatch=useDispatch();
     const translationsList = useSelector(state => state.translationsList.translationsList);
@@ -25,6 +26,7 @@ const handleClick=(id)=>{
 
 }
   return (
+    <div>
     <div className=" flex flex-col mx-8 my-4 p-2 justify-center items-start">
       <h1 className="text-light-green mb-2 text-xl  sm:text-2xl">Choose Translation:</h1>
       
@@ -38,6 +40,8 @@ const handleClick=(id)=>{
                 </div>
             )
         })}
+    </div>
+    <Footer/>
     </div>
   )
 }

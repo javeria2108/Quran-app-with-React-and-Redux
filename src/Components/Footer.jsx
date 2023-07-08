@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col sm:flex-row items-end sm:items-center">
             
-            <ul className="mt-2 sm:ml-8 mr-5">
+            <ul className="mt-2 sm:ml-8 sm:mr-5">
             <h3 className="text-lg mt-6 font-bold">Links</h3>
               <li>
                 <p className="text-slate-950 hover:text-white" onClick={home}>Home</p>
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center mt-6">
-          <p className="text-sm text-gray-400">© {new Date().getFullYear()} Your App. All rights reserved.</p>
+          <p className="text-sm text-gray-400">© {new Date().getFullYear()} Quran World. All rights reserved.</p>
         </div>
       </footer>
     </div>
