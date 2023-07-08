@@ -54,7 +54,7 @@ const handleChapterClick=(id)=>{
       </div>
 <p className="text-white text-xl sm:text-2xl">Click below to play melodious recitations</p>
 <button 
-          className=" text-green-bg text-2xl sm:text-3xl cursor-pointer hover:text-green-950
+          className="flex justify-center text-green-bg text-3xl sm:text-4xl cursor-pointer hover:text-green-950
           mt-2"
           onClick={handlePlayClick}>
          {play}
