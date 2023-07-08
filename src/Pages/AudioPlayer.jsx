@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay,faPause,faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
 import { fetchChapters } from "../redux/thunk";
-
+import playerBg from '../images/player.jpg'
 import { useNavigate } from "react-router-dom";
 const play=<FontAwesomeIcon icon={faPlay}/>
 const pause=<FontAwesomeIcon icon={faPause}/>
@@ -81,7 +81,7 @@ if (chapterInfo) {
       
       <div className="rounded-full border-2 shadow-lg  overflow-hidden h-64 w-64">
   <img className="object-cover w-full h-full" 
-  src='https://free4kwallpapers.com/uploads/originals/2020/05/06/milky-way-starry-sky-wallpaper.jpg'/>
+  src={playerBg}/>
 </div>
 <h1 className="text-4xl pt-3">{chapterNameSimple }</h1>
 <h1 className="text-3xl py-2">{chapterNameArabic}</h1>
