@@ -5,8 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay,faPause,faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
 import { fetchChapters } from "../redux/thunk";
-import playerBg from '../images/player.jpg'
-import { useNavigate } from "react-router-dom";
+
 const play=<FontAwesomeIcon icon={faPlay}/>
 const pause=<FontAwesomeIcon icon={faPause}/>
 const forward=<FontAwesomeIcon icon={faForwardStep}/>
@@ -19,8 +18,7 @@ export function QuranAudioPlayer() {
   const chapters = useSelector((state) => state.chapters.data);
   const [isPlaying, setPlaying] = useState(false);
   const reciterId = useSelector((state) => state.reciterId);
-  console.log(reciterId)
- 
+  
     const audioRef = useRef();
     useEffect(() => {
       dispatchAudio(fetchAudioUrl(id,reciterId));
@@ -56,10 +54,8 @@ const handleBackward=()=>{
     setPlaying(false)
   }
 }
-const navigate=useNavigate()
-const handleReciterClick=()=>{
-navigate(`/reciters/${id}`)
-}
+
+
 const chapterInfo=chapters[id-1];
 let chapterNameSimple, chapterNameArabic;
 if (chapterInfo) {
@@ -67,7 +63,9 @@ if (chapterInfo) {
   chapterNameArabic = chapterInfo.name_arabic;
 }
 
- 
+ useEffect(()=>{
+  
+ })
 
 
     return (
@@ -81,7 +79,7 @@ if (chapterInfo) {
       
       <div className="rounded-full border-2 shadow-lg  overflow-hidden h-64 w-64">
   <img className="object-cover w-full h-full" 
-  src={playerBg}/>
+  src='https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1pbGt5JTIwd2F5fGVufDB8fDB8fHww&w=1000&q=80'/>
 </div>
 <h1 className="text-4xl pt-3">{chapterNameSimple }</h1>
 <h1 className="text-3xl py-2">{chapterNameArabic}</h1>
