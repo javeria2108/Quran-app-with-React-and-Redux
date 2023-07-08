@@ -80,7 +80,8 @@ if (chapterInfo) {
    
       
       <div className="rounded-full border-2 shadow-lg  overflow-hidden h-64 w-64">
-  <img className="object-cover w-full h-full" src='https://e0.pxfuel.com/wallpapers/485/206/desktop-wallpaper-beautiful-starry-night-sky-high-quality-ocean-high-resolution-star.jpg'/>
+  <img className="object-cover w-full h-full" 
+  src='https://free4kwallpapers.com/uploads/originals/2020/05/06/milky-way-starry-sky-wallpaper.jpg'/>
 </div>
 <h1 className="text-4xl pt-3">{chapterNameSimple }</h1>
 <h1 className="text-3xl py-2">{chapterNameArabic}</h1>
