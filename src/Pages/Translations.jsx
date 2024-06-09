@@ -4,7 +4,6 @@ import { fetchTranslationsList } from '../redux/thunk/fetchTranslationsList';
 import { useParams } from 'react-router-dom';
 import { setTranslationId } from '../redux/actions';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../Components/Footer';
 const Translations = () => {
     const dispatch=useDispatch();
     const translationsList = useSelector(state => state.translationsList.translationsList);
@@ -41,7 +40,6 @@ const handleClick=(id)=>{
             )
         })}
     </div>
-    <Footer/>
     </div>
   )
 }

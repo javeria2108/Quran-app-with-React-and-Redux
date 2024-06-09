@@ -31,30 +31,23 @@ export const Verses = () => {
 
   const dispatchTranslation = useDispatch();
   useEffect(() => {
-    dispatchTranslation(fetchTranslation(id,translationId));
+    dispatchTranslation(fetchTranslation(id, translationId));
   }, [dispatchTranslation, id, translationId]);
- 
-  
 
   const handleTranslationClick = () => {
     setTranslate((prevState) => !prevState);
   };
-const navigate=useNavigate()
+  const navigate = useNavigate();
   const handlePlayClick = () => {
-    
-    
-    navigate(`/player/${id}`)
+    navigate(`/player/${id}`);
   };
   return (
     <>
-     
       <div className="bg-navy-bg ">
         <div
           className="flex flex-row
           mx-3 my-3"
         >
-        
-
           <button
             className="bg-green-bg
      text-white
@@ -84,9 +77,6 @@ const navigate=useNavigate()
           >
             {play}
           </button>
-      
-          
-
         </div>
         <div className="flex flex-col items-center justify-center min-h-screen py-5">
           <img
@@ -108,20 +98,18 @@ const navigate=useNavigate()
                     >
                       {verse.text_indopak}{" "}
                     </p>
-                   
+
                     {translate && (
                       <div>
-                        <div className="text-white text-center"
-                         dir="rtl">
+                        <div className="text-white text-center" dir="rtl">
                           {cleanHTMLTags(translation.text)}
                         </div>
-                       
                       </div>
                     )}
-                     <span
+                    <span
                       className="p-2 m-2
             text-green-bg italic "
-                   >
+                    >
                       {" " + verse.verse_key}
                     </span>
                   </div>

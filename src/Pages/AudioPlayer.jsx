@@ -4,7 +4,7 @@ import { fetchAudioUrl } from "../redux/thunk/fetchAudio";
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay,faPause,faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
-import { fetchChapters } from "../redux/thunk";
+import { fetchChapters } from "../redux/thunk/fetchChapters";
 
 const play=<FontAwesomeIcon icon={faPlay}/>
 const pause=<FontAwesomeIcon icon={faPause}/>
@@ -63,9 +63,6 @@ if (chapterInfo) {
   chapterNameArabic = chapterInfo.name_arabic;
 }
 
- useEffect(()=>{
-  
- })
 
 
     return (

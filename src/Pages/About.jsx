@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Components/Footer';
 
 const About = () => {
   return (
@@ -22,7 +21,6 @@ const About = () => {
         May the blessings and guidance of the Quran be with you on your path of knowledge and enlightenment.
       </p>
     </div>
-    <Footer/>
     </div>
   );
 }

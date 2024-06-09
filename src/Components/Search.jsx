@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { fetchChapters } from '../redux/thunk';
+import { fetchChapters } from '../redux/thunk/fetchChapters';
 import { useNavigate } from 'react-router-dom';
 const Search = () => {
   

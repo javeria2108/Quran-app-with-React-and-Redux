@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import Search from "./Search";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchChapters } from "../redux/thunk";
+import { fetchChapters } from "../redux/thunk/fetchChapters";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from 'framer-motion';
-import Footer from "./Footer";
 const play=<FontAwesomeIcon icon={faPlay}/>
 
 const Home = () => {
@@ -92,7 +91,6 @@ const handleChapterClick=(id)=>{
           );
         })}
       </div>
-      <Footer/>
     </div>
   );
 };

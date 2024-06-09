@@ -5,7 +5,7 @@ export const recitersListReducer = (state = [], action) => {
         case "FETCH_RECITERS_LIST_SUCCESS":
             return action.payload;
         case "FETCH_RECITERS_LIST_FAILURE":
-            return state;
+            return { ...state, error: action.payload }
         default:
             return state;
     }

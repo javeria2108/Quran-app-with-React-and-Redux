@@ -1,5 +1,3 @@
-import { useState } from "react";
-import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import { Verses } from "./Pages/Verses";
 import {Routes, Route } from 'react-router-dom';
@@ -10,6 +8,7 @@ import { Reciters } from "./Pages/Reciters";
 import Layout from "./Components/Layout";
 import About from "./Pages/About";
 import { FeedbackForm } from "./Pages/FeedbackForm";
+import Footer from "./Components/Footer";
 function App() {
 
   return (
@@ -31,6 +30,7 @@ function App() {
       
      </div>
      </Layout>
+     <Footer/>
     </>
   );
 }
