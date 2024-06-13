@@ -7,8 +7,10 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from 'framer-motion';
-const play=<FontAwesomeIcon icon={faPlay}/>
+import { auth } from "../../firebaseConfig";
 
+const play=<FontAwesomeIcon icon={faPlay}/>
+const user=auth.currentUser;
 const Home = () => {
   const chapters = useSelector((state) => state.chapters.data);
   const dispatch = useDispatch();

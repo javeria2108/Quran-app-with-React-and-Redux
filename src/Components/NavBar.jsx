@@ -41,7 +41,6 @@ const NavBar = ({ onBarsClick }) => {
   const handleSignOutClick = () => {
     signOut(auth).then(() => {
       setDropdown(false);
-      navigate('/Auth');
     }).catch((error) => {
       console.log(error);
     });
@@ -83,7 +82,7 @@ const NavBar = ({ onBarsClick }) => {
                 <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg'>
                   <button className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' onClick={handleSignOutClick}>Sign Out</button>
                   <button className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' onClick={handleFavouritesClick}>Favourites</button>
-                  <button className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' onClick={handleNotesClick}>Notes</button>
+                  <button className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100' onClick={handleNotesClick}>My notes</button>
                 </div>
               )}
             </div>

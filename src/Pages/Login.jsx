@@ -1,23 +1,23 @@
 import React from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Auth = () => {
+const Login = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 const navigate=useNavigate();
-const [signupError, setSignupError]=useState("")
+const [loginError, setLoginError]=useState("")
 const onSubmit=(data)=>{
     const email=data.email
     const password=data.password
 
-    createUserWithEmailAndPassword(auth,email,password).then((userCredential) => {
+    signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
         navigate("/")
@@ -26,15 +26,12 @@ const onSubmit=(data)=>{
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setSignupError(errorMessage);
+        setLoginError(error.message);
         // ..
       });
     
 } 
 
-const handleLogInClick=()=>{
-    navigate("/login")
-}
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-2/3 md:w-1/3 bg-white rounded-lg items-center p-5 m-auto my-10">
@@ -85,13 +82,12 @@ const handleLogInClick=()=>{
           type="submit"
           className="w-full mt-6 py-2 rounded bg-green-bg hover:bg-slate-950 text-gray-100 focus:outline-none"
         >
-          Sign Up
+          Login
         </button>
       </div>
-      {signupError && <span className="text-sm text-center text-red-700 m-1">{signupError}</span>}
-      <p className="text-gray-900 text-center mx-auto hover:cursor-pointer text-decoration: underline" onClick={handleLogInClick}>Already a user? Click here to Sign In</p>
+      {loginError && <span className="text-sm text-center text-red-700 m-1">{loginError}</span>}
     </form>
   );
 };
 
-export default Auth;
+export default Login;
