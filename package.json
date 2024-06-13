@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.4.0",
     "emailjs-com": "^3.2.0",
+    "firebase": "^10.12.2",
     "framer-motion": "^10.12.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -40,5 +41,4 @@
     "vite": "^4.3.9"
   },
   "proxy": "https://api.quran.com"
-
 }
