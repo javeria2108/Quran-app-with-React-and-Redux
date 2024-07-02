@@ -3,8 +3,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-
 const Auth = () => {
   const {
     handleSubmit,
@@ -12,7 +10,6 @@ const Auth = () => {
     formState: { errors },
   } = useForm();
 const navigate=useNavigate();
-const [signupError, setSignupError]=useState("")
 const onSubmit=(data)=>{
     const email=data.email
     const password=data.password
@@ -26,15 +23,12 @@ const onSubmit=(data)=>{
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setSignupError(errorMessage);
+        console.log(errorCode,errorMessage)
         // ..
       });
     
 } 
 
-const handleLogInClick=()=>{
-    navigate("/login")
-}
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-2/3 md:w-1/3 bg-white rounded-lg items-center p-5 m-auto my-10">
@@ -88,8 +82,6 @@ const handleLogInClick=()=>{
           Sign Up
         </button>
       </div>
-      {signupError && <span className="text-sm text-center text-red-700 m-1">{signupError}</span>}
-      <p className="text-gray-900 text-center mx-auto hover:cursor-pointer text-decoration: underline" onClick={handleLogInClick}>Already a user? Click here to Sign In</p>
     </form>
   );
 };

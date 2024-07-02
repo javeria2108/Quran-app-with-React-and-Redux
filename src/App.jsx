@@ -10,9 +10,6 @@ import About from "./Pages/About";
 import { FeedbackForm } from "./Pages/FeedbackForm";
 import Footer from "./Components/Footer";
 import Auth from "./Pages/Auth";
-import Favourites from "./Pages/Favourites";
-import Notes from "./Pages/Notes";
-import Login from "./Pages/Login";
 function App() {
 
   return (
@@ -31,9 +28,6 @@ function App() {
         <Route path="/translations/:name" element={<Translations/>}/>
         <Route path="/feedback" element={<FeedbackForm/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/favourites" element={<Favourites/>}/>
-        <Route path="/notes" element={<Notes/>}/>
-        <Route path="/login" element={<Login/>}/>
       </Routes>
       
      </div>
