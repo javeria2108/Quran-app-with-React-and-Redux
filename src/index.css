@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    background-color:#2F3E46;
+}
+@font-face {
+    font-family: "Al Qalam Quran";
+    src: url('../public/fonts/Al\ Qalam\ Quran.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
