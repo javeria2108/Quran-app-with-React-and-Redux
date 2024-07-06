@@ -1,23 +1,29 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { fetchRecitersList } from '../redux/thunk/fetchRecitersList';
-import { setReciterId } from '../redux/actions';
+import { useFetchRecitersListQuery } from '../redux/features/reciters/recitersApi';
+import { setReciterId } from '../redux/features/reciterIdSlice';
 
 export const Reciters = () => {
+  const { data: recitersData = {}, error, isLoading } = useFetchRecitersListQuery();
+  const [reciters, setReciters] = useState([]);
   const dispatch = useDispatch();
-  const recitersState = useSelector((state) => state.reciters);
-  const { reciters, error } = recitersState;
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchRecitersList());
-  }, [dispatch]);
+    if (recitersData && recitersData.reciters) {
+      setReciters(recitersData.reciters);
+    }
+  }, [recitersData]);
 
   const handleClick = (id) => {
     dispatch(setReciterId(id));
     navigate('/player/1');
   };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div>

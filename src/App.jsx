@@ -1,4 +1,4 @@
-import Home from "./Components/Home";
+import Home from "./Pages/Home";
 import { Verses } from "./Pages/Verses";
 import {Routes, Route } from 'react-router-dom';
 import {QuranAudioPlayer} from "./Pages/AudioPlayer";
