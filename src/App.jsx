@@ -9,7 +9,7 @@ import Layout from "./Components/Layout";
 import About from "./Pages/About";
 import { FeedbackForm } from "./Pages/FeedbackForm";
 import Footer from "./Components/Footer";
-import Auth from "./Pages/Auth";
+
 function App() {
 
   return (
@@ -20,7 +20,6 @@ function App() {
     
      <Routes>
      <Route path="/" element={<Home />} />
-        <Route path="/Auth" element={<Auth/>}/>
         <Route path="/verses/:id" element={<Verses />} />
         <Route path="/player/:id" element={<QuranAudioPlayer/>} />
         <Route path="/languages" element={<Languages/>}/>
