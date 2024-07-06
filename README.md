@@ -37,15 +37,21 @@ npm install
 npm run dev
 
 
-The application should now be running at http://localhost:3000.
+The application should now be running at http://localhost:5173.
 
 ## Feedback and Support
 
 We welcome your feedback and suggestions for improving QuranWorld. If you encounter any issues or have any questions, please feel free to reach out to us at [email protected]
 
 ## Contributing
-
-We encourage contributions to enhance QuranWorld and make it even better. If you would like to contribute, please follow these steps:
+I'm planning to extend this app to include the following features after finishing my internship:
+- Creating Backend API with ASP.NET
+- Connecting with database and adding registration and login
+- Option to add recitations to favourites
+- Downloading recitations
+- Creating Notes about an ayat of the Quran
+  
+   If you want to help me with these features, I encourage contributions to enhance QuranWorld and make it even better. If you would like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
