@@ -61,9 +61,5 @@ I'm planning to extend this app to include the following features after finishin
 
 We appreciate your contributions and thank you for helping us improve QuranWorld.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 
 
