@@ -1,20 +1,10 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import { fetchChapters } from '../redux/thunk/fetchChapters';
 import { useNavigate } from 'react-router-dom';
+import { useFetchChaptersQuery } from '../redux/features/chapters/chaptersApi';
 const Search = () => {
-  
-  const chapters = useSelector((state) => state.chapters.data);
-console.log(chapters);
-
+  const { data: chapters = [], error, isLoading } = useFetchChaptersQuery;
   const [inputText, setInputText] = useState("");
-  const dispatch=useDispatch();
-  useEffect(()=>{
-    dispatch(fetchChapters());
-
-  },[dispatch])
- 
   const filteredData=chapters.filter(
     chapter=>chapter.name_simple.toLowerCase().includes(inputText.toLowerCase()))
     let inputHandler = (e) => {
@@ -26,6 +16,10 @@ console.log(chapters);
     const handleClick=(id)=>{
       navigate(`/verses/${id}`);
     }
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
+
   return (
     <div className='flex flex-col items-center max-w-md mx-auto '>
       <input
